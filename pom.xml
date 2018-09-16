@@ -9,12 +9,20 @@
 	<description>Module manager of super sales management.</description>
 	
 	<properties>
+		<ssm-widget.version>1.0</ssm-widget.version>
 		<swingx.version>1.6.5-1</swingx.version>
 		<eventbus.version>1.4</eventbus.version>
 		<ssm-core.version>1.0</ssm-core.version>
 		<ssm-service-api.version>1.0</ssm-service-api.version>
 		<synthetica.version>2.19.0</synthetica.version>
+		<syntheticaAddon.version>1.9.0</syntheticaAddon.version>
 		<hessian.version>4.0.38</hessian.version>
+		<commons-lang.version>2.5</commons-lang.version>
+		<commons-collections.version>3.2.1</commons-collections.version>
+		<jsefa.version>1.1.1.RELEASE</jsefa.version>
+		<softsmithy.version>0.4</softsmithy.version>
+		<miglayout.version>3.7.3.1</miglayout.version>
+		<jide-oss.version>3.6.5</jide-oss.version>
 		<myMavenRepo.read.url>https://mymavenrepo.com/repo/0gYeR1uVbGBd8IBUlAOb/</myMavenRepo.read.url>
 		<myMavenRepo.write.url>https://mymavenrepo.com/repo/EsiHd95I3nhSKhiViDip/</myMavenRepo.write.url>
 	</properties>
@@ -26,7 +34,61 @@
         </repository>
     </repositories>
 	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+				<version>3.2</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.22.0</version>
+			</plugin>
+			<!-- Eclipse plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<configuration>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>true</downloadJavadocs>
+				</configuration>
+				<version>2.9</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.10</version>
+			</plugin>
+		</plugins>
+	</build>
+	
 	<dependencies>
+		<dependency>
+			<groupId>org.swinglabs.swingx</groupId>
+			<artifactId>swingx-all</artifactId>
+			<version>${swingx.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.s3s.ssm</groupId>
+			<artifactId>ssm-widget</artifactId>
+			<version>${ssm-widget.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>${commons-lang.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>${commons-collections.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>com.s3s.ssm</groupId>
 			<artifactId>ssm-core</artifactId>
@@ -37,10 +99,11 @@
 			<artifactId>eventbus</artifactId>
 			<version>${eventbus.version}</version>
 		</dependency>
-		<!-- <dependency>
+		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
-		</dependency> -->
+			<version>4.0.6.RELEASE</version>
+		</dependency>
 		<dependency>
 			<groupId>com.caucho</groupId>
 			<artifactId>hessian</artifactId>
@@ -57,6 +120,53 @@
 			<version>${synthetica.version}</version>
 			<scope>system</scope>
 			<systemPath>${project.basedir}/libs/synthetica.jar</systemPath>
+		</dependency>
+		<dependency>
+		  <groupId>net.sf.jsefa</groupId>
+		  <artifactId>jsefa</artifactId>
+	      <version>${jsefa.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.softsmithy.lib</groupId>
+			<artifactId>softsmithy-lib-core</artifactId>
+			<version>${softsmithy.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.softsmithy.lib</groupId>
+			<artifactId>softsmithy-lib-swing</artifactId>
+			<version>${softsmithy.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>jyloo</groupId>
+			<artifactId>jywidgets</artifactId>
+			<version>${synthetica.version}</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/libs/jywidgets.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>jyloo</groupId>
+			<artifactId>syntheticaAddons</artifactId>
+			<version>${syntheticaAddon.version}</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/libs/syntheticaAddons.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>jyloo</groupId>
+			<artifactId>jytable</artifactId>
+			<version>${synthetica.version}</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/libs/jytable.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>com.miglayout</groupId>
+			<artifactId>miglayout</artifactId>
+			<version>${miglayout.version}</version>
+			<classifier>swing</classifier>
+		</dependency>
+		<dependency>
+			<groupId>com.jidesoft</groupId>
+			<artifactId>jide-oss</artifactId>
+			<version>${jide-oss.version}</version>
 		</dependency>
 	</dependencies>
 	
