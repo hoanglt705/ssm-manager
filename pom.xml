@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.s3s.ssm</groupId>
 	<artifactId>ssm-manager</artifactId>
-	<version>1.0</version>
+	<version>1.1</version>
 	<packaging>jar</packaging>
 	<name>ssm-manager module</name>
 	<description>Module manager of super sales management.</description>
