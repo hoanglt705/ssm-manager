@@ -45,12 +45,11 @@ import com.s3s.ssm.service.IUomCategoryService;
 
 @Configuration
 public class ManagerHessanConfig {
-  private static final String SERVER_URL = "http://localhost:8081";
 
   @Bean(name = "companyService")
   public HessianProxyFactoryBean hessianCompanyProxyFactoryBean() {
     HessianProxyFactoryBean bean = new HessianProxyFactoryBean();
-    bean.setServiceUrl(SERVER_URL + "/CompanyService");
+    bean.setServiceUrl(ServiceUrlProvider.getCoreServiceUrl() + "/CompanyService");
     bean.setServiceInterface(ICompanyService.class);
     return bean;
   }
@@ -58,7 +57,7 @@ public class ManagerHessanConfig {
   @Bean(name = "areaService")
   public HessianProxyFactoryBean hessianAreaProxyFactoryBean() {
     HessianProxyFactoryBean bean = new HessianProxyFactoryBean();
-    bean.setServiceUrl(SERVER_URL + "/AreaService");
+    bean.setServiceUrl(ServiceUrlProvider.getCoreServiceUrl() + "/AreaService");
     bean.setServiceInterface(IAreaService.class);
     return bean;
   }
@@ -66,7 +65,7 @@ public class ManagerHessanConfig {
   @Bean(name = "materialService")
   public HessianProxyFactoryBean hessianMaterialProxyFactoryBean() {
     HessianProxyFactoryBean bean = new HessianProxyFactoryBean();
-    bean.setServiceUrl(SERVER_URL + "/MaterialService");
+    bean.setServiceUrl(ServiceUrlProvider.getCoreServiceUrl() + "/MaterialService");
     bean.setServiceInterface(IMaterialService.class);
     return bean;
   }
@@ -74,7 +73,7 @@ public class ManagerHessanConfig {
   @Bean(name = "importStoreFormService")
   public HessianProxyFactoryBean hessianImportStoreFormProxyFactoryBean() {
     HessianProxyFactoryBean bean = new HessianProxyFactoryBean();
-    bean.setServiceUrl(SERVER_URL + "/ImportStoreFormService");
+    bean.setServiceUrl(ServiceUrlProvider.getCoreServiceUrl() + "/ImportStoreFormService");
     bean.setServiceInterface(IImportStoreFormService.class);
     return bean;
   }
@@ -82,7 +81,7 @@ public class ManagerHessanConfig {
   @Bean(name = "foodTableService")
   public HessianProxyFactoryBean hessianFoodTableProxyFactoryBean() {
     HessianProxyFactoryBean bean = new HessianProxyFactoryBean();
-    bean.setServiceUrl(SERVER_URL + "/FoodTableService");
+    bean.setServiceUrl(ServiceUrlProvider.getCoreServiceUrl() + "/FoodTableService");
     System.getProperty("catalog_service_url");
     bean.setServiceInterface(IFoodTableService.class);
     return bean;
@@ -91,7 +90,7 @@ public class ManagerHessanConfig {
   @Bean(name = "paymentContentService")
   public HessianProxyFactoryBean hessianPaymentContentServiceProxyFactoryBean() {
     HessianProxyFactoryBean bean = new HessianProxyFactoryBean();
-    bean.setServiceUrl(SERVER_URL + "/PaymentContentService");
+    bean.setServiceUrl(ServiceUrlProvider.getCoreServiceUrl() + "/PaymentContentService");
     bean.setServiceInterface(IPaymentContentService.class);
     return bean;
   }
@@ -99,7 +98,7 @@ public class ManagerHessanConfig {
   @Bean(name = "paymentService")
   public HessianProxyFactoryBean hessianPaymentServiceProxyFactoryBean() {
     HessianProxyFactoryBean bean = new HessianProxyFactoryBean();
-    bean.setServiceUrl(SERVER_URL + "/PaymentService");
+    bean.setServiceUrl(ServiceUrlProvider.getCoreServiceUrl() + "/PaymentService");
     bean.setServiceInterface(IPaymentService.class);
     return bean;
   }
@@ -107,7 +106,7 @@ public class ManagerHessanConfig {
   @Bean(name = "receiptService")
   public HessianProxyFactoryBean hessianReceiptServiceProxyFactoryBean() {
     HessianProxyFactoryBean bean = new HessianProxyFactoryBean();
-    bean.setServiceUrl(SERVER_URL + "/ReceiptService");
+    bean.setServiceUrl(ServiceUrlProvider.getCoreServiceUrl() + "/ReceiptService");
     bean.setServiceInterface(IReceiptService.class);
     return bean;
   }
@@ -115,7 +114,7 @@ public class ManagerHessanConfig {
   @Bean(name = "roleService")
   public HessianProxyFactoryBean hessianRoleProxyFactoryBean() {
     HessianProxyFactoryBean bean = new HessianProxyFactoryBean();
-    bean.setServiceUrl(SERVER_URL + "/RoleService");
+    bean.setServiceUrl(ServiceUrlProvider.getCoreServiceUrl() + "/RoleService");
     bean.setServiceInterface(IRoleService.class);
     return bean;
   }
@@ -123,7 +122,7 @@ public class ManagerHessanConfig {
   @Bean(name = "employeeService")
   public HessianProxyFactoryBean hessianEmployeeProxyFactoryBean() {
     HessianProxyFactoryBean bean = new HessianProxyFactoryBean();
-    bean.setServiceUrl(SERVER_URL + "/EmployeeService");
+    bean.setServiceUrl(ServiceUrlProvider.getCoreServiceUrl() + "/EmployeeService");
     bean.setServiceInterface(IEmployeeService.class);
     return bean;
   }
@@ -147,7 +146,7 @@ public class ManagerHessanConfig {
   @Bean(name = "supplierService")
   public HessianProxyFactoryBean hessianSupplierServiceProxyFactoryBean() {
     HessianProxyFactoryBean bean = new HessianProxyFactoryBean();
-    bean.setServiceUrl(SERVER_URL + "/SupplierService");
+    bean.setServiceUrl(ServiceUrlProvider.getCoreServiceUrl() + "/SupplierService");
     bean.setServiceInterface(ISupplierService.class);
     return bean;
   }
@@ -179,7 +178,7 @@ public class ManagerHessanConfig {
   @Bean(name = "shiftService")
   public HessianProxyFactoryBean hessianShiftServiceProxyFactoryBean() {
     HessianProxyFactoryBean bean = new HessianProxyFactoryBean();
-    bean.setServiceUrl(SERVER_URL + "/ShiftService");
+    bean.setServiceUrl(ServiceUrlProvider.getCoreServiceUrl() + "/ShiftService");
     bean.setServiceInterface(IShiftService.class);
     return bean;
   }
@@ -187,7 +186,7 @@ public class ManagerHessanConfig {
   @Bean(name = "sequenceNumberService")
   public HessianProxyFactoryBean hessianSequenceNumberProxyFactoryBean() {
     HessianProxyFactoryBean bean = new HessianProxyFactoryBean();
-    bean.setServiceUrl(SERVER_URL + "/SequenceNumberService");
+    bean.setServiceUrl(ServiceUrlProvider.getCoreServiceUrl() + "/SequenceNumberService");
     bean.setServiceInterface(ISequenceNumberService.class);
     return bean;
   }
@@ -195,7 +194,7 @@ public class ManagerHessanConfig {
   @Bean(name = "storeService")
   public HessianProxyFactoryBean hessianStoreProxyFactoryBean() {
     HessianProxyFactoryBean bean = new HessianProxyFactoryBean();
-    bean.setServiceUrl(SERVER_URL + "/StoreService");
+    bean.setServiceUrl(ServiceUrlProvider.getCoreServiceUrl() + "/StoreService");
     bean.setServiceInterface(IStoreService.class);
     return bean;
   }
@@ -203,7 +202,7 @@ public class ManagerHessanConfig {
   @Bean(name = "invoiceService")
   public HessianProxyFactoryBean hessianInvoiceProxyFactoryBean() {
     HessianProxyFactoryBean bean = new HessianProxyFactoryBean();
-    bean.setServiceUrl(SERVER_URL + "/InvoiceService");
+    bean.setServiceUrl(ServiceUrlProvider.getCoreServiceUrl() + "/InvoiceService");
     bean.setServiceInterface(IInvoiceService.class);
     return bean;
   }
@@ -211,7 +210,7 @@ public class ManagerHessanConfig {
   @Bean(name = "securityUserService")
   public HessianProxyFactoryBean hessianSecurityUserProxyFactoryBean() {
     HessianProxyFactoryBean bean = new HessianProxyFactoryBean();
-    bean.setServiceUrl(SERVER_URL + "/SecurityUserService");
+    bean.setServiceUrl(ServiceUrlProvider.getCoreServiceUrl() + "/SecurityUserService");
     bean.setServiceInterface(ISecurityUserService.class);
     return bean;
   }
@@ -219,7 +218,7 @@ public class ManagerHessanConfig {
   @Bean(name = "securityRoleService")
   public HessianProxyFactoryBean hessianSecurityRoleProxyFactoryBean() {
     HessianProxyFactoryBean bean = new HessianProxyFactoryBean();
-    bean.setServiceUrl(SERVER_URL + "/SecurityRoleService");
+    bean.setServiceUrl(ServiceUrlProvider.getCoreServiceUrl() + "/SecurityRoleService");
     bean.setServiceInterface(ISecurityRoleService.class);
     return bean;
   }
